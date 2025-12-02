@@ -85,7 +85,7 @@ public class Request {
     }
     
     public static void resetToken(){
-       nextToken = 1;   
+        nextToken = 1;
     }
 
     public String toString(){
