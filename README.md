@@ -1,10 +1,10 @@
 # AZ Preston Hall Booking System
 
-This is the COMP2140 Group project by Group 4
+This is the COMP2140 Group project by Group 4.
 
 Members:
-Beatrice Matthias
-Sukanayna Hoo
-Toni-ann Smith
-Daniel Bingham
+Beatrice Matthias,
+Sukanayna Hoo,
+Toni-ann Smith,
+Daniel Bingham,
 Javaughn Mcgregor
