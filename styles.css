@@ -1,0 +1,45 @@
+/* styles.css */
+
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    background-color: #F0F0F0;
+}
+
+/* Table styles */
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+}
+
+/* Table header styles */
+th{
+    border: 1px solid #333;
+    padding: 8px;
+    text-align: center;
+    height: 20px;
+}
+
+/* Table cell styles */
+td {
+    border: 1px solid #333;
+    padding: 8px;
+    text-align: left;
+    height: 15px;
+}
+
+/* Link styles */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Hover effect for links */
+a:hover {
+    text-decoration: underline;
+    color: blue;
+}
+
+
