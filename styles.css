@@ -1,0 +1,85 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size-adjust:none;
+    display: flex;
+    flex-direction: column;
+}
+
+title{
+    display: none;
+}
+
+header{
+    background-color: #011738;
+    color: #fdfcce;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1{
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+main{
+    background-color: #dbd5fd;
+    color: #011738;
+    line-height: 1.6;
+    margin: 10px;
+    padding: 10px;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#request-form-section{
+    margin-top: 20px;
+}
+
+#introduction{
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+#features{
+    align-items: right;
+    text-align: left;
+
+}
+
+#getting-started{
+    align-items: center;
+    text-align:left;
+    margin-top: 20px;
+}
+
+button{
+    background-color: #011738;
+    color: #fdfcce;
+    width: 200px;
+    border: auto;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#getting-started p, h2{
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+footer{
+    grid-area: 3 span;
+    background-color: #011738;
+    color: #fdfcce;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: auto;
+}
