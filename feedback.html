@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback Page</title>
+  <link href="feedback.css" type="text/css" rel="stylesheet" />
+  <script src="feedback.js" type="text/javascript"></script>
+
+</head>
+<body>
+  <h1>Feedback</h1>
+
+  <!--form action="" method="">-->
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name">
+    <button id = "btn" >Enter</button>
+    <br><br>
+
+    <!--label for="event_id">Event ID:</label><br>
+    <input type="text" id="event_id" name="event_id">
+    <button type="submit" name="action" value="enter_event" formnovalidate>Enter</button>
+    <br><br>-->
+
+    <label for="event_id">Event ID:</label><br>
+    <input type="text" id="event_id" name="event_id">
+    <button id="event_btn">Enter</button>
+    <br><br>
+
+    <div id="feedback_section" style="display:none;">
+      <label for="feedback">Feedback:</label><br>
+      <textarea id="feedback" name="feedback" rows="6" cols="60" style="font-size: 14px; padding: 8px; resize: vertical;" placeholder="Enter your feedback here..."></textarea>
+      <br>
+      <button id="feedback_btn" style="margin-top: 10px; padding: 8px 20px; font-size: 14px;">Submit Feedback</button>
+      <br><br>
+    </div>
+
+    <!--<label for="feedback">Feedback:</label><br>
+    <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea>
+    <button type="submit" name="action" value="enter_feedback" formnovalidate>Enter</button>
+    <br><br>
+
+    <label>I confirm my feedback is ready to submit</label><br>
+    <input type="radio" id="confirm_yes" name="confirm" value="yes" required>
+    <label for="confirm_yes">Yes</label>
+    <input type="radio" id="confirm_no" name="confirm" value="no">
+    <label for="confirm_no">No</label>
+    <br><br>
+
+    <button type="submit" name="action" value="submit">Submit Feedback</button>-->
+  <!--/form>-->
+  <div id="result"></div>
+</body>
+</html>
+
