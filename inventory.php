@@ -20,6 +20,16 @@ if(isset($_GET['event'])){
         exit();
     }
     EventTable($results);
+    exit();
+}if (isset($_POST['itemName']) && isset($_POST['itemAmount']) && isset($_POST['itemDescription'])){
+    $name= htmlspecialchars($_POST['itemName']);
+    $amount = htmlspecialchars($_POST['itemAmount']);
+    $description = htmlspecialchars($_POST['itemDescription']);
+    $stmt = $conn->prepare("INSERT INTO `inventory items` (`Equipment Type`, `Amount`, `Description`) VALUES ('$name', $amount, '$description')");
+    $stmt->execute();
+    echo "<h2>Insert Successful</h2>";
+}else{
+    echo "<h3>No request made</h3>";
 }
 
 function InventoryTable($results){
