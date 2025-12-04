@@ -1,8 +1,7 @@
-/* styles.css */
+/* eventstyles.css */
 
 /* General body styles */
 body {
-    font-family: Arial, sans-serif;
     padding: 10px;
     background-color: #F0F0F0;
 }
@@ -52,3 +51,5 @@ a:hover {
     text-decoration: underline;
     color: blue;
 }
+
+

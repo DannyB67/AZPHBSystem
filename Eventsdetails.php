@@ -1,87 +1,57 @@
 <?php
-// Database connection
-$host = "localhost";
-$user = "root";
-$pass = "";
-$dbname = "azphbsystem";
+// eventdetails.php
 
-$conn = new mysqli($host, $user, $pass, $dbname);
+if (!isset($_GET['eid'])) {
+    echo "No event ID provided.";
+    exit;
+}
+
+$eid = intval($_GET['eid']);
+
+$conn = new mysqli("localhost", "root", "", "azphbsystem");
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Ensure ID was received
-if (!isset($_GET['eid'])) {
-    die("No event selected.");
-}
-
-$eid = intval($_GET['eid']);
-
-// Fetch event
 $sql = "SELECT * FROM eventschedule WHERE EID = $eid";
 $result = $conn->query($sql);
 
-if ($result->num_rows == 0) {
-    die("Event not found.");
+if ($result->num_rows === 0) {
+    echo "No event found with ID $eid";
+    exit;
 }
 
-$event = $result->fetch_assoc();
+$row = $result->fetch_assoc();
+
+// Store variables safely
+$name        = $row['Name'] ?? "";
+$email       = $row['Email Address'] ?? "";
+$telephone   = $row['Telephone Number'] ?? "";
+$residency   = $row['Residency Status'] ?? "";
+$eventName   = $row['Event Name'] ?? "";
+$eventDate   = $row['Event Date'] ?? "";
+$equipment   = $row['Equipment Needed'] ?? "";
+$amount      = $row['Amount'] ?? "";
+$description = $row['Description'] ?? "N/A";
+$feedback    = $row['Feedback'] ?? "N/A";
+
+
+// Display in required order:
+echo "<h2>Specific Event Details</h2><hr>";
+
+echo "<p><strong>Name:</strong> $name</p>";
+echo "<p><strong>Email Address:</strong> $email</p>";
+echo "<p><strong>Telephone Number:</strong> $telephone</p>";
+echo "<p><strong>Residency Status:</strong> $residency</p>";
+echo "<p><strong>Event Name:</strong> $eventName</p>";
+echo "<p><strong>Event Date:</strong> $eventDate</p>";
+echo "<p><strong>Equipment Needed:</strong> $equipment</p>";
+echo "<p><strong>Amount:</strong> $amount</p>";
+echo "<p><strong>Description:</strong> $description</p>";
+echo "<p><strong>Feedback:</strong> $feedback</p>";
+
+// Adds in a back button to the Events.html page.
+echo '<br><br><a href="Events.html"><button type="button" id="button">← Back to Event Schedule</button></a>';
+$conn->close();
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title><?php echo htmlspecialchars($event["Event Name"]); ?> - Details</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-
-<header>
-    <h1><?php echo htmlspecialchars($event["Event Name"]); ?></h1>
-</header>
-
-<section class="event-description">
-
-    <div class="event-box">
-        <h2>Event Information</h2>
-        <p><strong>Event Name:</strong> <?php echo htmlspecialchars($event["Event Name"]); ?></p>
-        <p><strong>Event Date:</strong> <?php echo $event["Event Date"]; ?></p>
-        <p><strong>Description:</strong> 
-            <?php echo $event["Description"] ? htmlspecialchars($event["Description"]) : "No description provided."; ?>
-        </p>
-    </div>
-
-    <div class="event-box">
-        <h2>Requester Information</h2>
-        <p><strong>Name:</strong> <?php echo htmlspecialchars($event["Name"]); ?></p>
-        <p><strong>Email:</strong> <?php echo htmlspecialchars($event["Email Address"]); ?></p>
-        <p><strong>Telephone:</strong> <?php echo $event["Telephone Number"]; ?></p>
-        <p><strong>Residency Status:</strong> <?php echo htmlspecialchars($event["Residency Status"]); ?></p>
-    </div>
-
-    <div class="event-box">
-        <h2>Equipment & Resources</h2>
-        <p><strong>Equipment Needed:</strong> <?php echo htmlspecialchars($event["Equipment Needed"]); ?></p>
-        <p><strong>Amount:</strong> <?php echo htmlspecialchars($event["Amount"]); ?></p>
-    </div>
-
-    <div class="event-box">
-        <h2>Feedback</h2>
-        <p>
-            <?php echo $event["Feedback"] ? htmlspecialchars($event["Feedback"]) : "No feedback available."; ?>
-        </p>
-    </div>
-
-</section>
-
-<div class="back-link">
-    <a href="events.php">&larr; Back to Event List</a>
-</div>
-
-</body>
-</html>
-
-<?php $conn->close(); ?>
