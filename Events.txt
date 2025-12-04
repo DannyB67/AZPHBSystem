@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AZPH Events Schedule</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <h1>AZPH Events Schedule</h1>
+        <hr>
+
+        <div id="page1">
+            <table>
+                <tr>
+                    <th colspan="5">
+                        <h2>Upcoming Events</h2>
+                    </th>
+                </tr>
+
+                <tr>
+                    <th width="70">Event ID</th>
+                    <th width="200">Client Name</th>
+                    <th>Event Name</th>
+                    <th width="150">Event Date</th>
+                    <th width="100">Event Status</th>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>John Brown</td>
+                    <td><a href="EventDescription.html">Music Festival</a></td>
+                    <td>December 5, 2025</td>
+                    <td>Agree</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Tom Cruise</td>
+                    <td><a href="event1.html">Sign Language Session</a></td>
+                    <td>December 8, 2025</td>
+                    <td>Agree</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Mary Ann</td>
+                    <td><a href="event1.html">Film Session</a></td>
+                    <td>December 10, 2025</td>
+                    <td>Agree</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
