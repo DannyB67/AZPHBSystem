@@ -15,7 +15,7 @@
         <main>
             <form action="/submit_request.php" method="POST">
                 <h4>Please complete the form below: </h4>
-                <label for="name">Full Name:</label><br />
+                <label for="name">Full Name or Name of Group:</label><br />
                 <input type="text" id="name" name="name" required /><br /><br />
 
                 <label for="email">Email Address:</label><br />
@@ -30,6 +30,7 @@
                     <option value="Resident">Resident</option>
                     <option value="Commuter">Commuter</option>
                     <option value="Hall Administration">Hall Administration</option>
+                    <option value="External Organization">External Organization</option>
                     <option value="Other">Other</option>
                 </select><br /><br />
 
@@ -42,83 +43,56 @@
                 <label for="venue">Venue</label><br />
                 <select id="venue" name="venue" required>
                     <option value="">--Please choose an option--</option>
-                    <option value="Shark Lounge">Shark Lounge</option>
-                    <option value="Conference Room">Conference Room</option>
-                    <option value="Cafe Area">Cafe Area</option>
+                    <option value="Shark-Lounge">Shark Lounge</option>
+                    <option value="Conference-Room">Conference Room</option>
+                    <option value="Cafe-,Area">Cafe Area</option>
                     <option value="Round-a-bout">Round-a-bout</option>
                 </select><br /><br />
 
                 <div>
                     <label for="equipment">Equipment: </label><br />
-                    <label>
-                        <input type="checkbox" id="equipment" name="equipment" value="chair"/>
-                        Chair
-                    </label>
+                    <label>Chair</label>
                     <input type ="number" id="chairQty" name="chairQty" min="0" max="100" value="0"/>  
                 </div>
 
                     <div>
-                        <label>
-                            <input type="checkbox" id="equipment" name="equipment" value="table"/>
-                            Table
-                        </label>
+                        <label>Table</label>
                         <input type ="number" id="tableQty" name="tableQty" min="0" max="10" value="0"/>  
                     </div>
 
                     <div>
-                        <label>
-                            <input type="checkbox" id="equipment" name="equipment" value="mic"/>
-                            Mic
-                        </label>
+                        <label>Mic</label>
                         <input type ="number" id="micQty" name="micQty" min="0" max="5" value="0"/>  
                     </div>
 
                     <div>
-                        <label>
-                            <input type="checkbox" id="equipment" name="equipment" value="mic stand"/>
-                            Mic Stand
-                        </label>
+                        <label>Mic Stand</label>
                         <input type ="number" id="standQty" name="standQty" min="0" max="5" value="0"/>  
                     </div>
 
                     <div>
-                        <label>
-                            <input type="checkbox" id="equipment" name="equipment" value="hdmi"/>
-                            HDMI Cable
-                        </label>
+                        <label>HDMI Cable</label>
                         <input type ="number" id="hdmiQty" name="hdmiQty" min="0" max="1" value="0"/>  
                     </div>
 
                     <div>
-                        <label>
-                            <input type="checkbox" id="equipment" name="equipment" value="projector"/>
-                            Projector
-                        </label>
+                        <label>Projector</label>
                         <input type ="number" id="projectorQty" name="projectorQty" min="0" max="1" value="0"/>  
                     </div>
 
                     <div>
-                        <label>
-                            <input type="checkbox" id="equipment" name="equipment" value="projector screen"/>
-                            Projector Screen
-                        </label>
+                        <label>Projector Screen</label>
                         <input type ="number" id="screenQty" name="screenQty" min="0" max="1" value="0"/>  
                     </div>
 
                     <div>
-                        <label>
-                            <input type="checkbox" id="equipment" name="equipment" value="drum"/>
-                            Drum
-                        </label>
+                        <label>Drum</label>
                         <input type ="number" id="drumQty" name="drumQty" min="0" max="1" value="0"/>  
                     </div>
 
                 <div>
-                    <label>
-                        <input type="checkbox" id="equipment" name="equipment" value="drum set"/>
-                        Drum Set
-                    </label>
-                     <input type ="number" id="dSetQty" name="dSetQty" min="0" max="1" value="0"/>  
+                    <label>Drum Set</label>
+                    <input type ="number" id="dSetQty" name="dSetQty" min="0" max="1" value="0"/>  
                 </div>
 
                 <br /><br />
