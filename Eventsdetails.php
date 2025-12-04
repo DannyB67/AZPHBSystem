@@ -40,10 +40,13 @@ $feedback    = $row['Feedback'] ?? "N/A";
 // Display in required order:
 echo "<h2>Specific Event Details</h2><hr>";
 
+echo "<h3><u>Client Details</u></h3>";
 echo "<p><strong>Name:</strong> $name</p>";
 echo "<p><strong>Email Address:</strong> $email</p>";
 echo "<p><strong>Telephone Number:</strong> $telephone</p>";
-echo "<p><strong>Residency Status:</strong> $residency</p>";
+echo "<p><strong>Residency Status:</strong> $residency</p><br>";
+
+echo "<h3><u>Event Details</u></h3>";
 echo "<p><strong>Event Name:</strong> $eventName</p>";
 echo "<p><strong>Event Date:</strong> $eventDate</p>";
 echo "<p><strong>Equipment Needed:</strong> $equipment</p>";
