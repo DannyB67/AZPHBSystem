@@ -1,0 +1,12 @@
+*{
+    font-family: "Helvetica Neue", sans-serif;;
+}
+
+input{
+    width: 700px;
+    height: 30px;
+}
+#iteminput {
+    padding: 10px;
+    margin: 10px;
+}

@@ -1,0 +1,63 @@
+<?php 
+$host = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'azphbsystem';
+//Select `inventory items`.`Equipment Type`,`inventory items`.`Amount`,`inventory items`.`Description` FROM `inventory items` JOIN eventschedule ON `inventory items`.`Equipment Type`=`eventschedule`.`Equipment Needed` WHERE `inventory items`.`Amount`>=eventschedule.`Equipment Needed`;
+$conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+if(isset($_GET['inventory'])){
+  $stmt = $conn->query("SELECT * FROM `inventory_items`");
+  $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  InventoryTable($results);
+  exit;
+}
+if(isset($_GET['event'])){
+    $date= htmlspecialchars($_GET['event']);
+    //echo $date;
+    $stmt = $conn->query("SELECT* FROM `inventory_items`.`Equipment Type`,`inventory_items`.`Amount`,`inventory_items`.`Description` FROM `inventory_items` JOIN eventschedule ON `inventory_items`.`Equipment Type`=`eventschedule`.`Equipment Needed` WHERE `inventory_items`.`Amount`>=eventschedule.`Equipment Needed` AND `eventschedule`.`Event Date`LIKE '%$date%'");
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    if(!$results){
+        echo "<h1>No dates match</h1>";
+        exit();
+    }
+    EventTable($results);
+    exit();
+}if (isset($_POST['itemName']) && isset($_POST['itemAmount']) && isset($_POST['itemDescription'])){
+    $name= htmlspecialchars($_POST['itemName']);
+    $amount = intval(htmlspecialchars($_POST['itemAmount']));
+    $description = htmlspecialchars($_POST['itemDescription']);
+    $stmt = $conn->prepare("INSERT INTO `inventory_items` (`Equipment Type`, `Amount`, `Description`) VALUES ('$name', $amount, '$description')");
+    $stmt->execute();
+    echo "<h2>Insert Successful</h2>";
+}else{
+    echo "<h3>No request made</h3>";
+}
+
+function InventoryTable($results){
+echo "<table><thead><tr><th>Equipment Type</th><th>Ammount</th><th>Description</th></tr></thead><tbody>";
+       foreach ($results as $row): 
+        echo "<tr>";
+          echo "<td>" .$row['Equipment Type']. "</td>";
+          echo "<td>" .$row['Amount']. "</td>";
+          echo "<td>" .$row['Description']. "</td>";
+        echo "</tr>";
+
+       endforeach; 
+  echo"</tbody></table>";
+}
+
+function EventTable($results){
+echo "<table><thead><tr><th>Equipment Name</th><th>Ammount</th><th>Description</th></tr></thead><tbody>";
+       foreach ($results as $row): 
+        echo "<tr>";
+          echo "<td>" .$row['Equipment Type']. "</td>";
+          echo "<td>" .$row['Amount']. "</td>";
+          echo "<td>" .$row['Description']. "</td>";
+          //echo "<td>" .$row['Event Name']. "</td>";
+        echo "</tr>";
+
+       endforeach; 
+  echo"</tbody></table>";
+}
+
+?>

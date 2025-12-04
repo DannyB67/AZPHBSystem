@@ -64,6 +64,8 @@ if ($stmt->execute()) {
         "message" => "Your booking request was submitted successfully! You will receive an email shortly with your booking details."
     ]);
 
+    $outputPdf = 'Terms.pdf';
+
     $command = escapeshellcmd("python mailSender.py " .
     escapeshellarg($name) . " " .
     escapeshellarg($email) . " " .
@@ -72,6 +74,8 @@ if ($stmt->execute()) {
     escapeshellarg($date) . " " .
     escapeshellarg($venue));
     $output = shell_exec($command);
+
+    
     
 } else {
     echo json_encode([
@@ -82,4 +86,9 @@ if ($stmt->execute()) {
 
 $stmt->close();
 $conn->close();
+function redirect($url) {
+    header("Location: $url");
+    exit();
+}
+redirect('suki/index.html');
 ?>

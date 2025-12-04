@@ -27,12 +27,24 @@ def send_email(recipient, subject, body):
     msg["To"] = recipient
     msg["Subject"] = subject
 
+    filename ="Terms.pdf"
+    filepath = f"./{filename}"
+    with open(filepath, "rb") as attachment:
+        part = MIMEText(attachment.read(), "base64", "utf-8")
+        part.add_header(
+            "Content-Disposition",
+            f"attachment; filename= {filename}",
+        )
+        msg.attach(part)    
+
     msg.attach(MIMEText(body, "plain"))
 
     with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
         server.starttls()
         server.login(SENDER_EMAIL, SENDER_PASSWORD)
         server.sendmail(SENDER_EMAIL, recipient, msg.as_string())
+       
+
         print(f"Email sent to {recipient}")
 
 def main():

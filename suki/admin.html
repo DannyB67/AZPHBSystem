@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="admin.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Admin Login</h1>
+    </header>
+    <main>
+        <section class="form-id active"id="loginSection" style="display:block;">
+            <h2>Please Enter Admin Credentials</h2>
+            <form id="adminLoginForm" action="" method="POST">
+                <label for="adminUsername">Username:</label><br>
+                <input type="text" id="adminUsername" name="adminUsername" required><br><br>
+
+                <label for="adminPassword">Password:</label><br>
+                <input type="password" id="adminPassword" name="adminPassword" required><br><br>
+
+                <button type="submit" id="adminLoginButton">Login</button>
+
+                <a id="redirect" href="index.html"><p> This is a page designated for Administrative personnel ONLY. If you think you may have 
+                    navigated here by mistake, please return to the homepage. </p></a>
+            </form>
+            <script src="admin.js"></script>
+            <div id="adminResponse"></div>
+        </section>
+    </main>
+</body>
+</html>
+<footer>
+    <p>&copy; 2025 Aston Preston Booking Site UWI, All rights reserved.</p>

@@ -52,12 +52,11 @@ CREATE TABLE `event_request` (
 --
 
 INSERT INTO `event_request` (`Name`, `Email Address`, `Telephone Number`, `Residency Status`, `Event Name`, `Venue`, `Event Date`, `Description`, `Chairs`, `Tables`, `Mic`, `Mic Stand`, `HDMI Cord`, `Projector`, `Projector Screen`, `Drum`, `Drum_Set`) VALUES
-('Sukanayna Hoo', 'myclassesonlinesh@gmail.com', 8761234567, 'Resident', 'PCC Workshop', 'Conference Room', '2025-12-17', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('Beatrice Matthias', 'beatriz128@gmail.com', 8761234567, 'Resident', 'Soup Sale', 'Cafe', '2025-12-18', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('Jason Boothe', 'json@gmail.com', 8761678976, 'Commuter', 'Block Buster Movie Night', 'Cafe', '2025-12-12', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('Brad Cooper', 'brad230@gmail.com', 8769998876, 'Other', 'Breast Cancer Awareness Pep Talk', 'Cafe', '2025-10-12', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('James Leslie', 'jamesleslie@yahoo.com', 8769987546, 'External Organization', 'JADE Debate Meeting', 'Shark Lounge', '2025-12-19', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('', '', 0, '', '', '', '0000-00-00', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+('Sukanayna Hoo', 'myclassesonlinesh@gmail.com', 8761234567, 'Resident', 'PCC Workshop', 'Conference Room', '2025-12-17', 20, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('Beatrice Matthias', 'beatriz128@gmail.com', 8761234567, 'Resident', 'Soup Sale', 'Cafe', '2025-12-18', 30, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('Jason Boothe', 'json@gmail.com', 8761678976, 'Commuter', 'Block Buster Movie Night', 'Cafe', '2025-12-12', 30, NULL, NULL, NULL, 1, 1, 1, NULL, NULL, NULL),
+('Brad Cooper', 'brad230@gmail.com', 8769998876, 'Other', 'Breast Cancer Awareness Pep Talk', 'Cafe', '2025-10-12', 25, NULL, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL),
+('James Leslie', 'jamesleslie@yahoo.com', 8769987546, 'External Organization', 'JADE Debate Meeting', 'Shark Lounge', '2025-12-19', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 

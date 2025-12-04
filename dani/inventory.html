@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8">
+		<title>Inventory</title>
+
+		
+		<link href="inventory.css" type="text/css" rel="stylesheet" /> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<script src="inventory.js" type="text/javascript"></script>
+	</head>
+
+	<body>
+		<header>
+			<h1>AZPH Inventory</h1>
+		</header>
+
+		<main>
+            <button id="chkInv">Check Inventory</button>
+			<div id="controls">
+				<label for="item">Enter a Date to see whats available:</label>
+				<input id="InvItem" type="date" name="InvItem" placeholder="Enter item name" />
+			</div>
+				
+			<button id="chkAmount">Available Inventory</button>
+			
+			<div id="iteminput">
+                <input id="inputName" type="search" name="inputName" placeholder="Please enter an item name" />
+                <input id="inputAmount" type="search" name="inputAmount" placeholder="Please enter an item amount" />
+                <input id="inputDescription" type="search" name="inputDescription" placeholder="Please enter an item Description" />
+                <button id="addItem">Submit</button>
+            </div>
+            <div id="area">
+                <button id="reveal">Insert Items</button>
+            </div>
+			<div id="result">
+				<!-- countries will appear here -->
+			</div>
+		</main>
+
+	</body>
+	<button id="homeButton" onclick="location.href='../suki/admindash.html'">Admin Dashboard</button>
+<footer>
+	<p>&copy; 2025 Aston Preston Booking Site UWI, All rights reserved.</p>
+</html>
