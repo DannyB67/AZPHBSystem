@@ -1,0 +1,81 @@
+<!DOCTYPE html>,<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Request Form</title>
+    <link rel="stylesheet" href="../suki/styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Booking Request Form</h1>
+    </header>
+    <main>
+        <section class="form-id active" id="requestForm" style="display:block;">
+            <h2>Fill Out Your Booking Request</h2>
+            <form action="" method="POST" id="bookingForm">
+                <label for="name">Full Name:</label><br>
+                <input type="name" id="Uname" name="Uname" required><br><br>
+
+                <label for="email">Email Address:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="phone">Phone Number:</label><br>
+                <input type="tel" id="phone" name="phone" required><br><br>
+
+                <label for="residencyStatus">Residency Status:</label><br>
+                <select id="residencyStatus" name="residencyStatus" required>
+                    <option value="resident">Resident</option>
+                    <option value="commuter">Commuter</option>
+                    <option value="guest">Other</option>
+                    <option value="external">External Organization</option>
+                </select><br><br>
+
+                <label for="eventName">Event Name:</label><br>
+                <textarea id="eventName" name="eventName" required></textarea><br><br>
+
+                <label for="venue">Venue:</label><br>
+                <select id="venue" name="venue" required>
+                    <option value="cafe">Cafe</option>
+                    <option value="study-room">Study Room</option>
+                    <option value="conference-room">Conference Room</option>
+                    <option value="shark-lounge">Shark Lounge</option>
+                    <option value="amphitheatre">Amphitheatre</option>
+                </select><br><br>
+
+                <label for="date">Event Date:</label><br>
+                <input type="date" id="eDate" name="eDate" required><br><br>
+
+                <label for="equipment">Equipment Needed:</label><br>
+                <input type="number" id="chair" name="chair">
+                <option value="chair">Chair</option><br>
+                <input type="number" id="table" name="table">
+                <option value="table">Table</option><br>
+                <input type="number" id="mic" name="equipment">
+                <option value="mic">Mic</option><br>
+                <input type="number" id="MicStand" name="equipment">
+                <option value="micStand">Mic Stand</option><br>
+                <input type="number" id="HDMIcord" name="equipment">
+                <option value="HDMIcord">HDMI Cord</option><br>
+                <input type="number" id="projector" name="equipment">
+                <option value="projector">Projector</option><br>
+                <input type="number" id="projectorScreen" name="equipment">
+                <option value="projectorScreen">Projector Screen</option><br>
+                <input type="number" id="drum" name="equipment">
+                <option value="drum">Drum</option><br>
+                <input type="number" id="Dset" name="equipment">
+                <option value="drumset">Drum Set</option><br><br>
+
+                <label for="details">Description:</label><br>
+                <textarea id="details" name="details"></textarea><br><br>
+
+                <button type="submit" id="submitButton" value="submit">Submit Request</button>
+            </form>
+            <div id="response"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Aston Preston Hall UWI, All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AZPH Booking Request Form</title>
+        <link rel="stylesheet" href="request.css">
+        <script src="request.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>AZPH Booking System</h1> 
+            <h2>Request Form</h2>
+        </header>
+        <main>
+            <form action="submitrequest.php" method="POST">
+                <h4>Please complete the form below: </h4>
+                <label for="name">Full Name or Name of Group:</label><br />
+                <input type="text" id="name" name="name" required /><br /><br />
+
+                <label for="email">Email Address:</label><br />
+                <input type="email" id="email" name="email" required /><br /><br />
+
+                <label for="phone">Telephone Number:</label><br />
+                <input type="tel" id="phone" name="phone" required /><br /><br />
+
+                <label for="status">Status on Campus:</label><br />
+                <select id="status" name="status" required>
+                    <option value="">--Please choose an option--</option>
+                    <option value="Resident">Resident</option>
+                    <option value="Commuter">Commuter</option>
+                    <option value="Hall Administration">Hall Administration</option>
+                    <option value="External Organization">External Organization</option>
+                    <option value="Other">Other</option>
+                </select><br /><br />
+
+                <label for="eventName">Event Name:</label><br />
+                <input type="eventName" id="eventName" name="eventName" required /><br /><br />
+
+                <label for="details">Purpose Of Event or Event Description:</label><br />
+                <textarea id="details" name="details" rows="10" cols="75"></textarea><br /><br />
+
+                <label for="venue">Venue</label><br />
+                <select id="venue" name="venue" required>
+                    <option value="">--Please choose an option--</option>
+                    <option value="Shark-Lounge">Shark Lounge</option>
+                    <option value="Conference-Room">Conference Room</option>
+                    <option value="Cafe-,Area">Cafe Area</option>
+                    <option value="Round-a-bout">Round-a-bout</option>
+                </select><br /><br />
+
+                <div>
+                    <label for="equipment">Equipment: </label><br />
+                    <label>Chair</label>
+                    <input type ="number" id="chairQty" name="chairQty" min="0" max="100" value="0"/>  
+                </div>
+
+                    <div>
+                        <label>Table</label>
+                        <input type ="number" id="tableQty" name="tableQty" min="0" max="10" value="0"/>  
+                    </div>
+
+                    <div>
+                        <label>Mic</label>
+                        <input type ="number" id="micQty" name="micQty" min="0" max="5" value="0"/>  
+                    </div>
+
+                    <div>
+                        <label>Mic Stand</label>
+                        <input type ="number" id="standQty" name="standQty" min="0" max="5" value="0"/>  
+                    </div>
+
+                    <div>
+                        <label>HDMI Cable</label>
+                        <input type ="number" id="hdmiQty" name="hdmiQty" min="0" max="1" value="0"/>  
+                    </div>
+
+                    <div>
+                        <label>Projector</label>
+                        <input type ="number" id="projectorQty" name="projectorQty" min="0" max="1" value="0"/>  
+                    </div>
+
+                    <div>
+                        <label>Projector Screen</label>
+                        <input type ="number" id="screenQty" name="screenQty" min="0" max="1" value="0"/>  
+                    </div>
+
+                    <div>
+                        <label>Drum</label>
+                        <input type ="number" id="drumQty" name="drumQty" min="0" max="1" value="0"/>  
+                    </div>
+
+                <div>
+                    <label>Drum Set</label>
+                    <input type ="number" id="dSetQty" name="dSetQty" min="0" max="1" value="0"/>  
+                </div>
+
+                <br /><br />
+
+                <label for="date">Preferred Booking Date:</label><br />
+                <input type="date" id="date" name="date" required /><br /><br />
+
+                <button id="submit"> Submit Request</button>
+            </form>
+            <div id="submitBox" class="hidden">
+                <p></p>
+                <button id="close" type="button">Close</button>
+            </div>
+        </main>
+    </body>
+</html>
