@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Page</title>
+    <link rel="stylesheet" href="../view.css">
+    <script src="viewbookings.js" defer></script>
+
+</head>
+<body>
+    <header>
+        <h1>View Bookings</h1>
+    </header>
+    <main>
+        <section id="bookingsSection" style="display:block;">
+            <h2>All Bookings</h2>
+            <div id="bookingsList">
+                <td><button name="Approve" id="approveBtn" method="post"></button></td>
+                <!-- Bookings will be dynamically loaded here -->
+            </div>
+            <form id="bookingsList" action="" method="POST">
+            <button type="submit" id="approveBookingButton">Approve Selected Bookings</button>
+            </form>
+            <a href="admindash.html"><button id="backToDashboardButton">Back to Dashboard</button></a>
+            <script src="viewbookings.js"></script>
+        </section>
+        <div id="bookingsResponse"></div>
+    </main>
+</body>
+</html>
