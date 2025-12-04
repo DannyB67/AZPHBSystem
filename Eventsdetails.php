@@ -3,7 +3,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$dbname = "eventschedule";
+$dbname = "azphbsystem";
 
 $conn = new mysqli($host, $user, $pass, $dbname);
 
