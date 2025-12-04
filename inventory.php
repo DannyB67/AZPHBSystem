@@ -13,17 +13,18 @@ if(isset($_GET['inventory'])){
 }
 if(isset($_GET['event'])){
     $date= htmlspecialchars($_GET['event']);
+    //echo $date;
     $stmt = $conn->query("SELECT `inventory items`.`Equipment Type`,`inventory items`.`Amount`,`inventory items`.`Description` FROM `inventory items` JOIN eventschedule ON `inventory items`.`Equipment Type`=`eventschedule`.`Equipment Needed` WHERE `inventory items`.`Amount`>=eventschedule.`Equipment Needed` AND `eventschedule`.`Event Date`LIKE '%$date%'");
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if(!$results){
-        echo "no dates match";
+        echo "<h1>No dates match</h1>";
         exit();
     }
     EventTable($results);
     exit();
 }if (isset($_POST['itemName']) && isset($_POST['itemAmount']) && isset($_POST['itemDescription'])){
     $name= htmlspecialchars($_POST['itemName']);
-    $amount = htmlspecialchars($_POST['itemAmount']);
+    $amount = intval(htmlspecialchars($_POST['itemAmount']));
     $description = htmlspecialchars($_POST['itemDescription']);
     $stmt = $conn->prepare("INSERT INTO `inventory items` (`Equipment Type`, `Amount`, `Description`) VALUES ('$name', $amount, '$description')");
     $stmt->execute();
